@@ -1,8 +1,17 @@
  {% load static  %}
+ <style>
+  .hello-msg{
+    font-size: 15px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <img src="{% static 'images/logo.jpg' %}" style="width: 3vw; min-width: 10px;"/>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,4 +32,7 @@
       </form>
     </div>
   </div>
+  
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
 </nav>
